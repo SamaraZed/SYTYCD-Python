@@ -20,6 +20,8 @@ def print_menu():
     """
     Print the items in the menu dictionary.
     """
+    cupcake_menu = menu
+
     print("Our menu:")
     for item in cupcake_menu:
         print("- \"%s\" (KD %s)" % (item, menu[item]))
@@ -33,7 +35,7 @@ def print_originals():
     """
     print("Our original flavor cupcakes (KD %s each):" % original_price)
     for item in original_flavors:
-    print("- \"%s\"" % item)
+        print("- \"%s\"" % item)
 
 
 def print_signatures():
@@ -65,7 +67,7 @@ def get_order():
     """
     order_list = []
     order = input("What's your order? (Enter the exact spelling of the item you want. Type 'Exit' to end your order.)\n")
-    while order.lowercase() != "exit":
+    while order.lower() != "exit":
         if is_valid_order(order):
             order_list.append(order)
         order = input()
